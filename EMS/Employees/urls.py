@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
-from .views import EmployeeList
+from .views import EmployeeDetail, EmployeeList
 
 
 # router = routers.DefaultRouter()
@@ -26,6 +26,7 @@ from .views import EmployeeList
 
 urlpatterns = [
    
-    path('employees',EmployeeList.as_view())
+    path('employees',EmployeeList.as_view()),
+    path('employee/<int:pk>/',EmployeeDetail.as_view())
     
 ]
