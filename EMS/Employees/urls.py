@@ -16,16 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from rest_framework import routers
-from Employees import views
-from rest_framework.routers import DefaultRouter
+
+from .views import EmployeeList
+
 
 # router = routers.DefaultRouter()
 # router.register('employees',views.EmployeeList.as_view(), basename=employees)
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('Employees.urls'))
+   
+    path('employees',EmployeeList.as_view())
     
 ]

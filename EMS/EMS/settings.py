@@ -37,9 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Employees',
+    'rest_framework',
+    "corsheaders",
 ]
 
+cors_Allowed_origin = [
+    #"https://example.com",
+    #"https://sub.example.com",
+    "http://localhost:4200",
+    #"http://127.0.0.1:9000",
+    ]
+
+
 MIDDLEWARE = [
+     "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
